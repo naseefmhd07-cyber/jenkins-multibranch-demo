@@ -2,15 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Docker Connection Test') {
             steps {
-                echo "Building branch: ${env.BRANCH_NAME}"
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo "Testing branch: ${env.BRANCH_NAME}"
+                bat '"C:\Users\Lenovo\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe" version'
             }
         }
     }
